@@ -1,87 +1,160 @@
-# Welcome to React Router!
+# Publication Formatter
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A modern, dark-themed web application that formats manuscripts according to target journal requirements. Built with React Router, TypeScript, and Tailwind CSS.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## ✨ Features
 
-## Features
+- **Dark Theme UI** - Beautiful dark interface with glass morphism effects
+- **Real-time Formatting** - Instant manuscript formatting with live preview
+- **Custom Journal Formats** - Create and save your own journal requirements
+- **Multiple Reference Styles** - Support for Vancouver, APA, Chicago, Harvard, MLA, IEEE, AMA, CSE, ACS, Nature, Science
+- **Rich Font Options** - 20+ font families to choose from
+- **Word/Character Count** - Real-time manuscript statistics
+- **Instant Download** - Download formatted documents immediately
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## 🚀 Quick Start
 
-## Getting Started
+### Local Development
 
-### Installation
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd journalformatter
+   ```
 
-Install the dependencies:
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-```bash
-npm install
-```
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-### Development
+4. **Open in browser**
+   Navigate to `http://localhost:5173`
 
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
+### Build for Production
 
 ```bash
 npm run build
 ```
 
-## Deployment
+## 🌐 Deployment
 
-### Docker Deployment
+### Deploy to Vercel (Recommended)
 
-To build and run using Docker:
+1. **Push to GitHub**
+   ```bash
+   git add .
+   git commit -m "Ready for deployment"
+   git push origin main
+   ```
 
-```bash
-docker build -t my-app .
+2. **Connect to Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Sign in with GitHub
+   - Click "New Project"
+   - Import your repository
+   - Vercel will automatically detect the React Router configuration
 
-# Run the container
-docker run -p 3000:3000 my-app
+3. **Deploy**
+   - Vercel will automatically build and deploy your app
+   - Your app will be available at `https://your-project-name.vercel.app`
+
+### Manual Vercel Deployment
+
+If you prefer to deploy manually:
+
+1. **Install Vercel CLI**
+   ```bash
+   npm i -g vercel
+   ```
+
+2. **Deploy**
+   ```bash
+   vercel
+   ```
+
+3. **Follow the prompts**
+   - Link to existing project or create new
+   - Confirm deployment settings
+   - Wait for build and deployment
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React 19, React Router 7
+- **Styling**: Tailwind CSS 4
+- **Language**: TypeScript
+- **Build Tool**: Vite
+- **Icons**: Lucide React
+- **Deployment**: Vercel
+
+## 📁 Project Structure
+
+```
+journalformatter/
+├── app/
+│   ├── components/
+│   │   └── PublicationFormatter.tsx    # Main component
+│   ├── routes/
+│   │   └── home.tsx                    # Home route
+│   ├── utils/
+│   │   └── docxParser.ts               # Document parsing utilities
+│   ├── app.css                         # Global styles
+│   └── root.tsx                        # App root
+├── public/                             # Static assets
+├── package.json                        # Dependencies
+├── tsconfig.json                       # TypeScript config
+├── vite.config.ts                      # Vite config
+└── vercel.json                         # Vercel deployment config
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+## 🎨 Customization
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+### Adding New Journal Formats
 
-### DIY Deployment
+Edit the `DEFAULT_JOURNAL_FORMATS` array in `PublicationFormatter.tsx`:
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+```typescript
+{
+  id: "custom-journal",
+  name: "My Custom Journal",
+  description: "Description of the journal",
+  lineSpacing: 1.5,
+  wordLimit: 5000,
+  referenceStyle: "Vancouver",
+  fontFamily: "Times New Roman",
+  fontSize: 12,
+  margins: { top: 1, bottom: 1, left: 1, right: 1 }
+}
 ```
 
-## Styling
+### Styling Customization
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+- **Colors**: Modify Tailwind classes in components
+- **Animations**: Update CSS keyframes in `app.css`
+- **Layout**: Adjust grid and flex layouts in components
+
+## 🔧 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run typecheck` - Run TypeScript type checking
+
+## 📝 License
+
+MIT License - feel free to use this project for your own purposes.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
 ---
 
-Built with ❤️ using React Router.
+**Built with ❤️ using React Router and Tailwind CSS**

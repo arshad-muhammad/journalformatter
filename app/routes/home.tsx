@@ -1,13 +1,13 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import { PublicationFormatter } from "../components/PublicationFormatter";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Publication Formatter" },
+    { name: "description", content: "Format your manuscript for target journals" },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  return <PublicationFormatter />;
 }
