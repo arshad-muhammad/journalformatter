@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Upload, FileText, Download, Settings, CheckCircle, AlertCircle } from 'lucide-react';
+import { extractTextFromFile } from '../utils/docxParser';
 
 interface JournalFormat {
   id: string;
